@@ -20,7 +20,7 @@ print(f"The DataFrame has {len(df)} rows.")
 
 # Define the paths
 data_folder = '../samples/images/'
-output_folder = './visualizations/'
+output_folder = '../docs/'
 os.makedirs(output_folder, exist_ok=True)
 
 # Loop through each analysis report in your DataFrame
