@@ -1,6 +1,9 @@
 # VS Code settings
-.vscode/
+
 function-app/.vscode/
+function-app/.python_packages/
+backup/
+analysis/.env
 
 # Azure Functions local settings
 local.settings.json
@@ -8,3 +11,24 @@ local.settings.json
 # Python virtual environment
 .venv/
 __pycache__/
+
+# Azurite
+__blobstorage__/
+__queuestorage__/
+__azurite_db_queue__.json
+__azurite_db_table__.json
+__azurite_db_blob__.json
+__azurite_db_blob_extent__.json
+__azurite_db_queue_extent__.json
+
+
+
+# data
+data/
+.vscode/extensions.json
+.vscode/launch.json
+.vscode/settings.json
+.vscode/tasks.json
+Advanced
+App
+Apps
