@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azure AI Human Detection Analysis</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Neural Color Palette */
+            --color-background: #f8f8f8; /* Light gray background */
+            --color-text: #333; /* Dark gray for text */
+            --color-light-gray: #e0e0e0; /* Border/separator color */
+            --color-accent: #6c757d; /* Muted accent color for links/headers */
+            --color-white: #ffffff;
+            --color-shadow: rgba(0, 0, 0, 0.05);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: var(--color-background);
+            color: var(--color-text);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; /* Align content to the left */
+            min-height: 100vh; /* Ensure full viewport height */
+        }
+
+        h1, h2, h3 {
+            color: var(--color-accent);
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-top: 30px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-weight: 300; /* Lighter weight for body text */
+            max-width: 700px; /* Constrain paragraph width for readability */
+            text-align: left;
+            margin-bottom: 10px;
+        }
+        
+        a {
+            color: var(--color-accent);
+            text-decoration: none;
+            font-weight: 400;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px; /* Overall max width for main content */
+            margin: 0 auto;
+            padding: 0 20px; /* Padding for smaller screens */
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+            gap: 20px;
+            padding: 20px 0;
+            margin-top: 30px;
+            max-width: 1200px; /* Constrain gallery width */
+            width: 100%;
+        }
+
+        .image-container {
+            background-color: var(--color-white);
+            border: 1px solid var(--color-light-gray);
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: var(--color-shadow) 0px 4px 12px;
+            transition: transform 0.2s ease-in-out;
+            text-align: center;
+        }
+
+        .image-container:hover {
+            transform: translateY(-5px); /* Subtle lift on hover */
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+
+        .details-section {
+            background-color: var(--color-white);
+            border: 1px solid var(--color-light-gray);
+            border-radius: 8px;
+            padding: 30px;
+           
+            box-shadow: var(--color-shadow) 0px 4px 12px;
+            max-width: 1200px; /* Constrain width for details */
+            text-align: left;
+        }
+
+        .details-section p {
+            max-width: 100%; /* Override global p styling for this section */
+            text-align: left;
+            margin-bottom: 1em;
+        }        
+    </style>
+</head>
+<body>
+    <div class="container">
+    <h1>Azure AI Human Detection Results</h1>
+       
+    <div class="details-section">
+    <h3>Project Details</h3>
+    <p>This page showcases images processed by a serverless pipeline designed to detect humans using Azure AI Vision. Each image displays the detected bounding boxes and confidence scores, providing a visual assessment of the AI model's performance.</p>
+      
+    <p>This project was created as an assignment for the Advanced Python course within the Data Science program at EC Utbildning. It demonstrates a complete end-to-end serverless AI pipeline. The solution uses Python and Azure Functions to automatically process images uploaded to cloud storage, perform AI-based human detection, and store the results for further data analysis and visualization.</p>
+        
+    <h3>GitHub Repository</h3>
+    <p>You can view the full source code and project documentation on <a href="https://github.com/PieRatCat/azure-ai-human-detection">GitHub</a></p>
+
+    <h3>Dataset</h3>
+    <p>The images used for this analysis are from the <strong><a href="https://www.kaggle.com/datasets/constantinwerner/human-detection-dataset">Human Detection Dataset</a></strong> dataset, available from <strong><a href="https://www.kaggle.com">Kaggle</a></strong>. The dataset is used here for educational and demonstration purposes only.</p>
+    <p></p>
+    </div>
+    <h2>A sample of images analysed by the serverless pipeline.</h2>
+    <div class="gallery">
+        <div class="image-container">
+            <img src="analysis/1_analyzed.png" alt="Analysis of image 1">
+        </div>
+        <div class="image-container">
+            <img src="analysis/11_analyzed.png" alt="Analysis of image 11">
+        </div>
+        <div class="image-container">
+            <img src="analysis/21_analyzed.png" alt="Analysis of image 21">
+        </div>
+        <div class="image-container">
+            <img src="analysis/22_analyzed.png" alt="Analysis of image 22">
+        </div>
+        <div class="image-container">
+            <img src="analysis/26_analyzed.png" alt="Analysis of image 26">
+        </div>
+        <div class="image-container">
+            <img src="analysis/31_analyzed.png" alt="Analysis of image 31">
+        </div>
+        <div class="image-container">
+            <img src="analysis/41_analyzed.png" alt="Analysis of image 41">
+        </div>
+        <div class="image-container">
+            <img src="analysis/47_analyzed.png" alt="Analysis of image 47">
+        </div>
+        <div class="image-container">
+            <img src="51_analyzed.png" alt="Analysis of image 51">
+        </div>
+        <div class="image-container">
+            <img src="analysis/61_analyzed.png" alt="Analysis of image 61">
+        </div>
+        <div class="image-container">
+            <img src="analysis/62_analyzed.png" alt="Analysis of image 62">
+        </div>
+        <div class="image-container">
+            <img src="analysis/71_analyzed.png" alt="Analysis of image 71">
+        </div>
+        <div class="image-container">
+            <img src="analysis/81_analyzed.png" alt="Analysis of image 81">
+        </div>
+        <div class="image-container">
+            <img src="analysis/82_analyzed.png" alt="Analysis of image 82">
+        </div>
+        <div class="image-container">
+            <img src="analysis/86_analyzed.png" alt="Analysis of image 86">
+        </div>
+        <div class="image-container">
+            <img src="analysis/91_analyzed.png" alt="Analysis of image 91">
+        </div>
+        <div class="image-container">
+            <img src="analysis/92_analyzed.png" alt="Analysis of image 92">
+        </div>
+        <div class="image-container">
+            <img src="analysis/101_analyzed.png" alt="Analysis of image 101">
+        </div>
+        <div class="image-container">
+            <img src="analysis/102_analyzed.png" alt="Analysis of image 102">
+        </div>
+        <div class="image-container">
+            <img src="analysis/111_analyzed.png" alt="Analysis of image 111">
+        </div>
+        <div class="image-container">
+            <img src="analysis/112_analyzed.png" alt="Analysis of image 112">
+        </div>
+        <div class="image-container">
+            <img src="analysis/121_analyzed.png" alt="Analysis of image 121">
+        </div>
+        <div class="image-container">
+            <img src="analysis/126_analyzed.png" alt="Analysis of image 126">
+        </div>
+        <div class="image-container">
+            <img src="analysis/131_analyzed.png" alt="Analysis of image 131">
+        </div>
+        <div class="image-container">
+            <img src="analysis/132_analyzed.png" alt="Analysis of image 132">
+        </div>
+        <div class="image-container">
+            <img src="analysis/141_analyzed.png" alt="Analysis of image 141">
+        </div>
+        <div class="image-container">
+            <img src="analysis/174_analyzed.png" alt="Analysis of image 174">
+        </div>
+        <div class="image-container">
+            <img src="analysis/193_analyzed.png" alt="Analysis of image 193">
+        </div>
+        <div class="image-container">
+            <img src="analysis/239_analyzed.png" alt="Analysis of image 239">
+        </div>
+        <div class="image-container">
+            <img src="analysis/241_analyzed.png" alt="Analysis of image 241">
+        </div>        
+        </div>
+</body>
+</html>
