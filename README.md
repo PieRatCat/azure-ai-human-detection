@@ -60,3 +60,8 @@ Follow these steps to set up and run the project in Azure.
 
 ### Data Analysis
 The Jupyter Notebook located in the `analysis/` folder provides a detailed breakdown of the analysis performed on the generated JSON reports. It includes visualisations and key metrics to evaluate the pipeline's performance.
+
+---
+
+### Dataset
+The images used for this analysis are from the Human Detection Dataset, available on Kaggle. [https://www.kaggle.com/datasets/constantinwerner/human-detection-dataset](https://www.kaggle.com/datasets/constantinwerner/human-detection-dataset)
