@@ -30,7 +30,7 @@ def ImageAnalysisFunction(event: func.EventGridEvent):
             blob_client = BlobClient.from_blob_url(blob_url=blob_url, credential=credential)
             image_data = blob_client.download_blob().readall()
 
-            # --- Your image analysis logic ---
+            # Image analysis
             endpoint = os.environ["VISION_ENDPOINT"]
             key = os.environ["VISION_KEY"]
 
@@ -61,7 +61,7 @@ def ImageAnalysisFunction(event: func.EventGridEvent):
 
             logging.info("Analysis complete. Generating JSON report.")
             
-            # --- New code to write directly to storage ---
+            # Write to storage
             container_client = BlobClient.from_connection_string(
                 conn_str=os.environ["AzureWebJobsStorage"],
                 container_name="analysis-results",
